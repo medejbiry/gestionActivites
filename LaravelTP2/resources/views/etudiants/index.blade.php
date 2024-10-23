@@ -8,15 +8,24 @@
     </div>
 
     <div class="bg-white shadow-md rounded-lg overflow-hidden">
-
+        <ul class="divide-y divide-gray-200">
         @foreach ($etudiants as $etudiant)
-            <p>{{ $etudiant->fullname }}</p>
-            <a href="{{ route('etudiants.show', $etudiant) }}">Expand</a>
-            <form action="{{ route('etudiants.destroy', $etudiant) }}" method="POST">
-                @csrf
-                @method('DELETE')
-                <button type="submit">Delete</button>
-            </form>
+        <li class="p-4 flex justify-between items-center">
+            <div>
+                <span class="text-lg font-semibold">{{ $etudiant->fullname}}</span>
+            </div>
+            <div class="space-x-2">
+                <a href="{{ route('etudiants.edit', $etudiant->id) }}"
+                    class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-1 px-3 rounded">Éditer</a>
+                <form action="{{ route('etudiants.destroy', $etudiant->id) }}" method="POST" class="inline">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit"
+                        class="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-3 rounded"
+                        onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce etudiant?')">Supprimer</button>
+                </form>
+            </div>
+        </li>
         @endforeach
     </div>
 </div>
