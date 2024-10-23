@@ -8,6 +8,9 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Gestion Activitees</h1>
+    <a href="{{route('etudiants.index')}}">Etudiants</a>
+    <a href="{{route('professeur.index')}}">Professeur</a>
     @yield('main')
 </body>
 </html>
