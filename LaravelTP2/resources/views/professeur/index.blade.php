@@ -6,15 +6,15 @@
   
   <div class="container mx-auto p-6">
         <div class="flex justify-between items-center mb-6">
-            <h1 class="text-3xl font-bold text-blue-600">Liste des Professeurs</h1>
+            <h1 class="text-3xl font-bold text-white">Liste des Professeurs</h1>
             <a href="{{ route('professeur.create') }}"
                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Ajouter un professeur</a>
         </div>
 
         <div class="bg-white shadow-md rounded-lg overflow-hidden">
-            <ul class="divide-y divide-gray-200">
+            <ul class="divide-y divide-gray-200 ">
                 @foreach ($professeurs as $professeur)
-                    <li class="p-4 flex justify-between items-center">
+                    <li class="p-4 flex justify-between items-center ">
                         <div>
                             <span class="text-lg font-semibold">{{ $professeur->nom }} {{ $professeur->prenom }}</span>
                             <span class="text-sm text-gray-500"> - {{ $professeur->Email }}</span>

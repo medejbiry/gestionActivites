@@ -2,7 +2,7 @@
 @extends('base')
 @section('main')
 
-<div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+<div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md mx-auto">
         <h1 class="text-2xl font-bold text-center mb-6 text-blue-600">Modifier un Etudiant</h1>
         <form action="{{ route('etudiants.update', $etudiant) }}" method="POST">
             @csrf
